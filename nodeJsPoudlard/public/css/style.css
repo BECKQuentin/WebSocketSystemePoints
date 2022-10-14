@@ -1,0 +1,32 @@
+/*Bootsrap*/
+
+.admin_form {
+    margin: 20px;
+}
+.admin_form label {
+    font-size: 24px;
+}
+
+.admin_form input {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 0 10px;
+}
+.btn_points {
+    margin: 0 2px;
+}
+
+
+
+/*test points*/
+/*.poudlard_points_box p {*/
+/*    transition: --num 1s;*/
+/*    counter-reset: num var(--num);*/
+/*}*/
+/*.poudlard_points_box p:hover {*/
+/*    --num: 10000;*/
+/*}*/
+/*.poudlard_points_box p::after {*/
+/*    content: counter(num);*/
+/*}*/

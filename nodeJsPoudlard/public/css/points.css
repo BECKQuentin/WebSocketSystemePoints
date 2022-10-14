@@ -1,0 +1,80 @@
+body {
+    background-image: url("../upload/img/sky-night.jpg");
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#content {
+    height: 100vh;
+    width: 100%;
+}
+.hourglass_box {
+    position: absolute;
+    z-index: 250;
+    bottom: 28px;
+    right: 90px;
+    background-image: url("../upload/img/pointsPoudlard.png");
+    width: 845px;
+    height: 659px;
+}
+.poudlard_points_box {
+    position: absolute;
+    z-index: 1800;
+    top: 335px;
+    left: 50%;
+    width: 689px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+.poudlard_points_box p {
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+}
+#Gryffondor {
+    position: absolute;
+    left: 415px;
+    width: 120px;
+}
+#Poufsouffle {
+    position: absolute;
+    left: 570px;
+    width: 120px;
+}
+#Serpentard {
+    position: absolute;
+    left: 98px;
+    width: 120px;
+}
+#Serdaigle {
+    position: absolute;
+    left: 254px;
+    width: 120px;
+}
+
+/*Moon*/
+#moon {
+    position: absolute;
+    z-index: 150;
+    top: 50%;
+}
+
+/*Coud*/
+.cloud {
+    position: absolute;
+    z-index: 150;
+}
+#cloud1 {
+
+}
+#cloud2 {
+
+}
+#cloud3 {
+    height: 1000px;
+    top: 41%;
+}
+#cloud4 {
+    height: 150px;
+}

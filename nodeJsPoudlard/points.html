@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Points Poudlard</title>
+
+
+    <link rel="stylesheet" href="/bootstrap/bootstrap-5.1.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/points.css" />
+</head>
+<body>
+
+
+<div id="content">
+    <div class="hourglass_box">
+
+        <div class="poudlard_points_box">
+            <div id="Gryffondor">
+                <p id="PointsGryffondor">0</p>
+            </div>
+
+            <div id="Poufsouffle">
+                <p id="PointsPoufsouffle">0</p>
+            </div>
+
+            <div id="Serpentard">
+                <p id="PointsSerpentard">0</p>
+            </div>
+
+            <div id="Serdaigle">
+                <p id="PointsSerdaigle">0</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!--Lune-->
+<img id="moon" src="upload/img/moon.png" alt="">
+
+<!--Nuages-->
+<img id="cloud1" class="cloud" src="upload/img/cloud-1.png" alt="">
+<img id="cloud2" class="cloud" src="upload/img/cloud-2.png" alt="">
+<img id="cloud3" class="cloud" src="upload/img/cloud-3.png" alt="">
+<img id="cloud4" class="cloud" src="upload/img/cloud-4.png" alt="">
+
+
+
+
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/points.js" defer></script>
+<script>
+    let socket = io();
+    
+
+    socket.on('chat message', function(jsonPoints) {
+
+        const speed = 200;
+
+        let PointsGryffondor = document.getElementById('PointsGryffondor');
+        let PointsPoufsouffle = document.getElementById('PointsPoufsouffle');
+        let PointsSerpentard = document.getElementById('PointsSerpentard');
+        let PointsSerdaigle = document.getElementById('PointsSerdaigle');
+
+
+        //GRYFFONDOR
+        const animateGryffondor = () => {
+
+            const value = +jsonPoints.ptsGryffondor;
+            const data = +PointsGryffondor.innerText;
+
+            const time = value / speed;
+            if(data < value) {
+                PointsGryffondor.innerText = Math.ceil(data + time);
+                setTimeout(animateGryffondor, 1);
+            }
+            else{
+                PointsGryffondor.innerText = value;
+            }
+        }
+        animateGryffondor();
+
+
+        //POUFSOUFFLE
+        const animatePoufsouffle = () => {
+
+            const value = +jsonPoints.ptsPoufsouffle;
+            const data = +PointsPoufsouffle.innerText;
+
+            const time = value / speed;
+            if(data < value) {
+                PointsPoufsouffle.innerText = Math.ceil(data + time);
+                setTimeout(animatePoufsouffle, 1);
+            }
+            else{
+                PointsPoufsouffle.innerText = value;
+            }
+        }
+        animatePoufsouffle();
+
+
+        //SERPENTARD
+        const animateSerpentard = () => {
+
+            const value = +jsonPoints.ptsSerpentard;
+            const data = +PointsSerpentard.innerText;
+
+            const time = value / speed;
+            if(data < value) {
+                PointsSerpentard.innerText = Math.ceil(data + time);
+                setTimeout(animateSerpentard, 1);
+            }
+            else{
+                PointsSerpentard.innerText = value;
+            }
+        }
+        animateSerpentard();
+
+
+
+        //SERDAIGLE
+        const animateSerdaigle = () => {
+
+            const value = +jsonPoints.ptsSerdaigle;
+            const data = +PointsSerdaigle.innerText;
+
+            const time = value / speed;
+            if(data < value) {
+                PointsSerdaigle.innerText = Math.ceil(data + time);
+                setTimeout(animateSerdaigle, 1);
+            }
+            else{
+                PointsSerdaigle.innerText = value;
+            }
+        }
+        animateSerdaigle();
+
+
+    });
+</script>
+
+
+</body>
+</html>
